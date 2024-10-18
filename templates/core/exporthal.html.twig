@@ -1,0 +1,259 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-fr" lang="fr-fr">
+<head>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="Saphir" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="shortcut icon" href="https://cdn.hceres.fr/img/favicon/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.hceres.fr/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.hceres.fr/img/favicon/favicon-16x16.png">
+
+    <title>Hcéres</title>
+
+    <!--  Scripts-->
+    <script type="text/javascript" src="https://cdn.hceres.fr/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.hceres.fr/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.hceres.fr/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdn.hceres.fr/js/jquery.canvasjs.min.js"></script>
+    <script src="{{ asset('assets/js/jQuery-captcha/src/jquery-captcha.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/initHal.js') }}"></script>
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['addDownloadExtensions', "xlsm"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u='{{ prod_url_collecte }}';
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '{{ prod_id }}']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <!-- Matomo Image Tracker-->
+    <noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="{{ prod_url_collecte }}/p.php?idsite={{ prod_id }}6&amp;rec=1" style="border:0" alt="" /></noscript>
+    <!-- End Matomo -->
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://cdn.hceres.fr/css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://cdn.hceres.fr/css/materialize.min.css" type="text/css" rel="stylesheet"/>
+    <link href="https://cdn.hceres.fr/css/materialize.addon.css" type="text/css" rel="stylesheet"/>
+    <link href="{{ asset('assets/css/exporthal.css') }}" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+        </div>
+    </div>
+    <div class="parallax"><img src="{{ asset('assets/img/5.jpg') }}" alt="background img 1"></div>
+</div>
+
+<div id="Content">
+    <div class="contentHolder container">
+        <div class="ContentWhiteBox z-depth-1 firstContentWhiteBox">
+            <div class="row">
+                <div class="col s12">
+                    <div class="titrePage">
+                        <h4 class="page-title center">
+                            Exportez vos productions scientifiques de HAL
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <form id="myform">
+                        <span id="filter"></span>
+                        <div class="row">
+                            <div class="paragraph">
+                                <p>Les unités de recherche qui déposent leur production scientifique dans HAL peuvent s'appuyer sur ce formulaire pour exporter un tableau. Le Hcéres n'impose pas de dépôt de notices dans HAL, ni de texte intégral.</p>
+                                <p>Nous proposons plusieurs méthodes pour rechercher vos productions : par sigle, par collection ou par identifiant AuréHAL. Cette dernière méthode est à privilégier dans le cas où plusieurs laboratoires portent le même sigle que le vôtre.</p>
+                                <p>Une fois récupérée, veuillez vérifier la liste des productions en vous assurant qu’elles correspondent à celle de votre unité de recherche et corrigez-la si nécessaire.</p>
+                                <p>Le fichier final doit être annexé au dossier d'autoévaluation demandé par le Hcéres.</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="error-section" class="alert card red lighten-4 red-text text-darken-4">
+                                <div class="card-content">
+                                    <i class="material-icons">info</i><span id="error-content"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input id="datedeb" name="datedeb" size="4" type="text" class="form-control input-solid" required="true" value="2018">
+                                <label for="datedeb" class="placeholder">Année de début :</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="datefin" name="datefin" maxlength="4" size="4" type="text" class="form-control input-solid" value="2023" required="true">
+                                <label for="datefin" class="placeholder" >Année de fin :</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>
+                            <input  type="radio" id="filter-code" value="code" name="filter">
+                                <span class="subtitle"><b>Recherche par sigle ou collection du laboratoire</b></span>
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input id="equipelabo" name="equipelabo" size="25" type="text" class="form-control input-solid" required="true">
+                                <label for="equipelabo" class="placeholder">Sigle du laboratoire</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="idcoll" name="idcoll" size="25" type="text" class="form-control input-solid" required="true">
+                                <label for="idcoll" class="placeholder">Code de la collection</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label>
+                            <input type="radio" id="filter-aurehal" value="aurehal" name="filter">
+                                <span class="subtitle"><b>Recherche par identifiants  <a target="_blank" href="https://aurehal.archives-ouvertes.fr/structure/index">AuréHAL</a></b></span>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s11 m5">
+                                <input id="aurehal" name="aurehal" size="25" type="text" class="form-control input-solid" required="true">
+
+                                <label for="aurehal" class="placeholder">Identifiant AuréHAL</label>
+                            </div>
+                            <div class="col s1 m1">
+                                <a id="add-id-hal" class="btn-floating btn-medium waves-effect waves-light pink"><i class="material-icons">add</i></a>
+                            </div>
+                        </div>
+                        <div id="ids-hal" class="row" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div id="halCaptchaActif" data-my-variable="{{ halCaptchaActif }}"></div>
+                <div class="col s12 center">
+                    <div class="row" style="display: {{ halCaptchaActif }};">
+                        <div class="col s12 m6 offset-m3">
+                            <!-- captcha etat -->
+                            <div id="botdetect-captcha" data-captchastylename="alphabetique6_7CaptchaFR"></div>
+                            <input id="captchaFormulaireExtInput" type="text" placeholder="Veuillez saisir le code ci-dessus"/>
+                        </div>
+                    </div>
+
+                    <div id="submitbouton" class="waves-effect waves-light blueent btn btn-mid">
+                        <i class="material-icons left">search</i> Rechercher
+                    </div>
+                    <div id="cancelbouton" class="waves-effect waves-orangeent btn-flat btn-flat-mid orangeent-outlined orangeent-text">
+                        <i class="material-icons left">clear</i> Effacer
+                    </div>
+
+                </div>
+                <div class="separation30px"></div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <div id="chargement">
+                                <div class="col s12 center"><div class="preloader-wrapper small active"><div class="spinner-layer spinner-pink-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ResultsHolder">
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="titreResultat"><i class="material-icons">list_alt</i> Résultats de la recherche : <span class="nbreResultats"></span> productions scientifiques</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 center">
+                                <div id="boutons">
+                                    <a href="#" id="dlbouton" class="waves-effect waves-light blueent btn btn-large"><i class="material-icons left">download</i> Télécharger ma liste de productions</a>
+                                    <a href="#" target="_blank" id="vhalbouton" class="btn-flat btn-flat-mid blueent-outlined blueent-text"><i class="material-icons left">open_in_new</i> Lancer la recherche sur HAL</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="separation40px"></div>
+                            <div class="col s12 dashboardCardTitle">
+                                <i class="material-icons">donut_large</i>Statistiques
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 chartCol">
+                                <div id="StatsChartContainer1" class="chartContainerLineTop"></div>
+                                <input id="CodeCreaStats" name="CodeCreaStats" type="hidden" value=''>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="resultat" id="resultats"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div id="details"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style=" margin-top:10vh;" class="liendoc">
+            </div>
+        </div>
+        <div class="separation50px noFloat"></div>
+    </div>
+</div>
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col m6 s12">
+                <div class="site-infos__col">
+                    <div class="site-infos__image">
+                        <a href="https://www.hceres.fr/fr">
+                            <picture>
+                                <img src="assets/img/logo-Hceres-new-fr-blanc.png" alt="Hceres.fr (retour à l'accueil)">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="site-infos__wrap_right">
+                        <address class="site-infos__listitems">
+                            <p class="site-infos__item -name"> Haut Conseil de l’évaluation de la recherche et de l’enseignement supérieur</p>
+                            <p class="site-infos__item -subname">2 rue Albert Einstein<br>75013 Paris</p>
+                            <div id="adress-email">
+                                <a href="mailto:support-technique@hceres.fr ">CONTACTEZ-NOUS</a>
+                            </div>
+                        </address>
+                    </div>
+                    <div class="footer-info">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col m2 offset-m4 s12">
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+    </div>
+</footer>
+</body>
+</html>

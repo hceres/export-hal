@@ -1,0 +1,8 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+        halCaptchaActif: '%env(CAPTCHA_ACTIF)%'
+
+when@test:
+    twig:
+        strict_variables: true

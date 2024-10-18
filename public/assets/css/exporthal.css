@@ -1,0 +1,455 @@
+/******************** STYLE :	CONTENT ********************/
+body, html{
+    font-family: 'Source Sans Pro Light', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    color: #383D40;
+    background-color: #E8EBED;
+}
+#Content{
+    position: relative;
+    z-index: 2;
+}
+#Content .contentHolder{
+    margin-top: -30px;
+}
+.titrePage{
+    color: #7C4DB1;
+}
+.page-footer{
+    background-color: #5C2D91;
+}
+
+
+.separation10px, .separation15px, .separation20px, .separation30px, .separation40px, .separation50px{
+    float: left;
+    width: 100%;
+}
+.separation10px{
+    height: 10px;
+}
+.separation15px{
+    height: 15px;
+}
+.separation20px{
+    height: 20px;
+}
+.separation30px{
+    height: 30px;
+}
+.separation40px{
+    height: 40px;
+}
+.separation50px{
+    height: 50px;
+}
+.noFloat{
+    float: none;
+}
+.marginTop40{
+    margin-top: 40px;
+}
+.SectionDivider{
+    overflow: hidden;
+    width: 106%;
+    height: 1px;
+    margin: 20px -3% 30px;
+    background-color: #D9DDE2;
+}
+.ContentWhiteBox{
+    width: 100%;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+.firstContentWhiteBox{
+    margin-top: -60px;
+}
+.ContentWhiteBox.noPadding{
+    padding: 0;
+}
+.ContentWhiteBox.marginBottom10{
+    margin-bottom: 10px;
+}
+.ContentWhiteBox.marginBottom20{
+    margin-bottom: 20px;
+}
+.ContentWhiteBox.marginBottom30{
+    margin-bottom: 30px;
+}
+.parallax-container{
+    line-height: 0;
+    height: auto;
+    min-height: 180px;
+    color: rgba(255,255,255,0.9);
+}
+.parallax-container .parallax{
+    z-index: 0;
+}
+
+
+/******************** STYLE :	ENTETE ********************/
+#TopContentHolder{
+    height: 100px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#TopContentHolder.NavPinned{
+    height: 50px;
+}
+nav .brand-logo img{
+    height: 50px;
+    margin-top: 20px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    margin-right: 20px;
+    vertical-align: bottom;
+}
+#TopContentHolder.NavPinned .brand-logo img{
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+nav .brand-logo {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    line-height: 50px;
+    color: #383D40;
+    font-size: 28px;
+}
+#TopContentHolder.NavPinned .brand-logo {
+    line-height: 30px;
+    font-size: 16px;
+}
+
+/******************** STYLE :	FORM ********************/
+#ResultsHolder{
+    position: relative;
+    display: none;
+    margin-top: 30px;
+}
+#ResultsHolder::before{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 60%;
+    height: 2px;
+    margin-left: 20%;
+    content: ' ';
+    background: #7C4DB1;
+}
+#submitbouton{
+    margin-right: 30px;
+}
+.titreCat{
+    font-weight: bold;
+}
+.titreResultat{
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 30px;
+    color: #7C4DB1;
+}
+.titreResultat::after{
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    margin-left: 0;
+    content: ' ';
+    background: #7C4DB1;
+}
+.titreResultat .material-icons{
+    vertical-align: sub;
+}
+#vhalbouton{
+    margin-left: 30px;
+}
+.dashboardCardTitle{
+    font-size: 16px;
+    font-weight: bold;
+}
+.dashboardCardTitle .material-icons {
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+#StatsChartContainer1.chartContainerLineTop, #StatsChartContainer2.chartContainerLineTop {
+    width: 100%;
+    height: 300px;
+}
+#resultats {
+    margin-top: 20px;
+    border: 1px solid #E5E5E5;
+}
+/******************** STYLE :	FOOTER ********************/
+footer .row{
+    margin-bottom: 0;
+}
+.page-footer .footer-copyright{
+    display: none;
+}
+.site-infos__col{
+    display: flex;
+}
+.site-infos__image{
+    position: relative;
+    float: left;
+    margin-right: 1.7rem;
+}
+.site-infos__wrap_right{
+    max-width: 233px;
+}
+.site-infos__listitems{
+    font-style: normal;
+    overflow: hidden;
+    margin-bottom: 1.8rem;
+}
+.site-infos__item{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 0.3rem;
+    margin-bottom: 0.3rem;
+    color: #FFFFFF;
+}
+.site-infos__item.-name{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+site-infos__item.-subname{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+}
+
+.site-infos__image img{
+    height: 80px;
+    margin-bottom: 20px;
+}
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ */
+nav{
+    background-color: rgba(255,255,255,0.95);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+nav ul a{
+    color: #444444;
+}
+p{
+    line-height: 2rem;
+}
+
+.sidenav-trigger{
+    color: #26A69A;
+}
+
+.parallax-container .section{
+    width: 100%;
+}
+
+@media only screen and (max-width : 992px){
+    .parallax-container .section{
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section{
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width : 600px){
+    #index-banner .section{
+        top: 0;
+    }
+    nav .brand-logo img{
+        height: 40px;
+        margin-top: 10px;
+    }
+}
+
+.icon-block{
+    padding: 0 15px;
+}
+.icon-block .material-icons{
+    font-size: inherit;
+}
+
+footer.page-footer{
+    margin: 0;
+}
+
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav .nav-wrapper span, nav .nav-wrapper a.tooltipped, nav a.sidenav-trigger, nav a.sidenav-trigger i{
+        line-height: 100px;
+        height: 100px;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    nav.NavPinned, nav.NavPinned .nav-wrapper i, nav.NavPinned .nav-wrapper span, nav.NavPinned .nav-wrapper a.tooltipped, nav.NavPinned a.sidenav-trigger, nav.NavPinned a.sidenav-trigger i{
+        line-height: 50px;
+        height: 50px;
+    }
+    .navbar-fixed{
+        height: 100px;
+    }
+}
+
+.input-field > label {
+    font-size:16px;
+}
+
+[type="radio"] + span  {
+    font-size: 1.2rem;
+}
+
+.paragraph > p {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.chip{
+    font-weight:bold;
+}
+
+
+#error-section > .card-content > span {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right:4px;
+}
+#error-section > .card-content > .material-icons {
+    font-size: 1.5em;
+    position: relative;
+    top: 5px;
+    margin-right: 0.5em;
+}
+
+footer > div #adress-email > p::before{
+    content: '@';
+    font-size: 1rem;
+    font-weight: bold;
+    color: #E21256;
+}
+
+div #adress-email > a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+div #adress-email ::before{
+    content: '@';
+    font-size: 1rem;
+    font-weight: bold;
+    color: #E21256;
+}
+
+div#personnal-data{
+    display: flex;
+    margin: 0 0 0.5rem auto;
+    line-height: 1.0625rem;
+}
+
+div#personnal-data a{
+    font-size: 1rem;
+    letter-spacing: 0.03125rem;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer-info {
+    display: flex;
+    padding: 1rem 1rem 0.5rem 1rem;
+    flex-flow: column;
+    justify-content: space-around;
+    height: 67px;
+}
+
+.page-title a{
+    color: #6D28D9;
+}
+
+#help-link i, #help-link span {
+    color:blue;
+    font-size: 1.1rem;
+}
+
+.ContentWhiteBox ul, .modal ul{
+    margin-left: 20px;
+    list-style: none;
+}
+.ContentWhiteBox ul li::before, .modal ul li::before{
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    content: '\2022';
+    color: #ED145B;
+}
+.ContentWhiteBox ul li, .modal ul li{
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+#ModalApp h3{
+    color: #1b1b1b;
+}
+#ModalApp .collection{
+    margin-top: 40px;
+    border-color: transparent;
+}
+#ModalApp .collection .collection-item{
+    padding-top: 0;
+    padding-bottom: 10px;
+    border-color: transparent;
+    background-color: transparent;
+}
+#ModalApp ul li::before{
+    display: none;
+    content: '';
+}
+#ModalApp .collection .collection-item.avatar{
+    min-height: 50px;
+    padding-left: 37px;
+    float: none;
+}
+
+#ModalApp .collection .collection-item.avatar:not(.circle-clipper) a > .circle{
+    font-size: 16px;
+    line-height: 22px;
+    width: 22px;
+    height: 22px;
+}
+#ModalApp .collection .collection-item.avatar i.circle{
+    background-color: #ED145B;
+}
+#ModalApp .collection .collection-item.avatar .title{
+    font-size: 16px;
+    line-height: 20px;
+}
+#ModalApp .collection .collection-item.avatar a{
+    color: #383D40;
+}
+#ModalApp .collection .collection-item.avatar a:hover{
+    cursor: pointer;
+    color: #ED145B;
+}
+#ModalRgpd h4{
+    color: #7C4DB1;
+}
+#frontal{
+    margin-left: 26%;
+}
+
+
+
+

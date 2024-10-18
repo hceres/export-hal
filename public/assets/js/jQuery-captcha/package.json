@@ -1,0 +1,30 @@
+{
+  "name": "jquery-captcha",
+  "version": "2.3.2",
+  "description": "BotDetect Captcha jQuery Plugin (BotDetect Captcha Simple API integration for all of the jQuery versions)",
+  "scripts": {
+    "build": "grunt"  
+  },
+  "main": "dist/jquery-captcha.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/captcha-com/jquery-captcha.git"
+  },
+  "homepage": "https://captcha.com/jquery-captcha.html",
+  "keywords": [
+    "captcha",
+    "jquery captcha",
+    "jquery captcha plugin",
+    "captcha generator",
+    "botdetect"
+  ],
+  "author": "BotDetect Captcha",
+  "bugs": {
+    "url": "https://captcha.com/support"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.2.0"
+  },
+  "dependencies": {}
+}

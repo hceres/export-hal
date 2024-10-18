@@ -1,0 +1,54 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    pisteDirectory: '%kernel.project_dir%/var/piste/'
+    app_env: '%env(APP_ENV)%'
+    captcha_base_endpoint : '%env(CAPTCHA_BASE_ENDPOINT)%'
+    client_id: '%env(CLIENT_ID)%'
+    client_secret: '%env(CLIENT_SECRET)%'
+    piste_authorize_endpoint: '%env(PISTE_AUTHORIZE_ENDPOINT)%'
+    piste_token_endpoint: '%env(PISTE_TOKEN_ENDPOINT)%'
+    captcha_actif: '%env(CAPTCHA_ACTIF)%'
+    prod_id: '%env(PROD_ID)%'
+    prod_url_collecte: '%env(PROD_URL_COLLECTE)%'
+
+twig:
+    globals:
+        prod_id: '%prod_id%'
+        prod_url_collecte: '%prod_url_collecte%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $pisteDirectory: '%pisteDirectory%'
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Migrations/'
+            - '../src/Helper/exporthal/'
+
+    App\Service\ApiPiste:
+        arguments:
+            $apiBaseEndpoint: '%captcha_base_endpoint%'
+            $clientId: '%client_id%'
+            $clientSecret: '%client_secret%'
+            $pisteAuthorizeEndpoint: '%piste_authorize_endpoint%'
+            $pisteTokenEndpoint: '%piste_token_endpoint%'
+
+    App\Controller\ExportHalController:
+        arguments:
+            $captchaActif: '%captcha_actif%'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
