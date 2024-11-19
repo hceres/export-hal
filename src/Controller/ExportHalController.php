@@ -44,18 +44,19 @@ class ExportHalController extends AbstractController
 
     /**
      * @Route("/exporthal", name="exportHalSubmit", methods={"GET", "POST"})
+     * @param Request $request
      * @return JsonResponse
+     * @throws \Exception
      */
     public function exporthalSubmit(Request $request)
     {
-
-        $result = ExportHal::getResult(
+        $exportHal = new ExportHal();
+        $result = $exportHal->getResult(
             $request->get('recherche'),
             $request->get('idshal'),
             $request->get('idcoll'),
             $request->get('dateDeb'),
             $request->get('dateFin'),
-            $request->get('soulignauteur'),
             $request->get('equipelabo'),
         );
 

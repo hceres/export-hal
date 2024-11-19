@@ -24,7 +24,7 @@ class CaptchaController extends AbstractController
      * @param Request $request
      * @param ApiPiste $apiService
      * @param string $endpoint
-     * @return string
+     * @return Response
      * @throws \Exception
      */
 
@@ -37,6 +37,8 @@ class CaptchaController extends AbstractController
      * @Route("/captcha/validation", methods={"POST"}, name="captcha-validation")
      * @param Request $request
      * @param ApiPiste $apiService
+     * @return Response
+     * @throws \Exception
      */
 
     public function captchaValidation(Request $request, ApiPiste $apiService) {
