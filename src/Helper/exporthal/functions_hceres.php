@@ -566,7 +566,7 @@ function getCitationCours($notice)
 		$ret .=  $notice['subTitle_s'][0].' ';
 	}
 	
-	if (isset($notice['lectureName_s']) || isset($notice['lectureType_s']) || isset($notice['authorityInstitution_s'])) {
+	if (isset($notice['lectureName_s']) && isset($notice['lectureType_s']) && isset($notice['authorityInstitution_s'])) {
 		$cours = '('. $notice['lectureName_s'] .', '. getLectureType($notice['lectureType_s']) .', '. $notice['authorityInstitution_s'][0] .')';
 		$cours = str_replace('(, ', '(', $cours);
 		$cours = str_replace(', )', ')', $cours);
@@ -665,7 +665,7 @@ function getCitationAutre($notice)
 		$ret .= 'In : ' . $notice['bookTitle_s'] . '. ';
 	}
 
-	if (isset($notice['lectureName_s']) || isset($notice['lectureType_s']) || isset($notice['authorityInstitution_s'])) {
+	if (isset($notice['lectureName_s']) && isset($notice['lectureType_s']) && isset($notice['authorityInstitution_s'])) {
 		$cours = '('. $notice['lectureName_s'] .', '. getLectureType($notice['lectureType_s']) .', '. $notice['authorityInstitution_s'][0] .')';
 		$cours = str_replace('(, ', '(', $cours);
 		$cours = str_replace(', )', ')', $cours);
